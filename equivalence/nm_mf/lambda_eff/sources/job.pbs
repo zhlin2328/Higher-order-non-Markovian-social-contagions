@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#PBS -o pbs.log
+#PBS -j oe
+#PBS -q fat
+
+#PBS -l walltime=200:00:00
+##PBS -l mem=500M
+#PBS -l nodes=1:ppn=3
+
+#PBS -N nm_mf_er
+##PBS -q day
+
+export PS1="pbs"
+. $HOME/.bashrc
+
+echo ===========================================================================
+echo BEGIN: `date`
+
+echo PBS_O_HOST		: $PBS_O_HOST
+echo PBS_O_WORKDIR	: $PBS_O_WORKDIR
+echo PBS_JOBNAME	: $PBS_JOBNAME
+echo PBS_NODEFILE	: $PBS_NODEFILE
+echo PBS_QUEUE		: $PBS_QUEUE
+
+echo -e "This jobs is "$PBS_JOBID@$PBS_QUEUE"\n\n"
+cd $PBS_O_WORKDIR
+
+##### here is your command line  ####
+pbsdsh bash -l -c  "$PBS_O_WORKDIR/task.sh"
+##### your command line end here ####
+
+echo -e "\n\nEND: "`date`
+echo -e ==========================================================================="\n\n\n"
