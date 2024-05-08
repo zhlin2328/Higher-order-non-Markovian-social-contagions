@@ -540,7 +540,6 @@ double Gamma_Fun1(double x)
 
 	return sol;
 }
-//别人写的gamma函数
 double Gamma_Fun2(const double xx)
 {
 	int j;

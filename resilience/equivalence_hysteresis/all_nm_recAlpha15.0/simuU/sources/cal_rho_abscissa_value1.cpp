@@ -7,8 +7,7 @@
 ** Created date:        2021.2.1
 ** Version:             V1.0
 ** Descriptions:        绝热过程的方式画迟滞回线
-						simplex非马模型(Gibson异步更新)，
-						画parm_rho图（直接由每个rhoT求出stRho值，然后平均得到parm_rho图）
+						simplex非马模型(Gibson异步更新)
 ********************************************************************************************************/
 #include "../headers/config.h"
 
@@ -58,7 +57,7 @@ void Cal_AveStRho_Of_Diff_Networks(void)
 		sprintf(name, NETWORK_TRI_FILE, i, g_Net.SERIAL);						//read netwotk_tri_list data
 		Read_Net_TriList_File(&netTriList, name);
 
-		g_Spd.aveK_1D = Avenk_NK(g_Net.N, netAdjList);							//这个目前没什么作用了
+		g_Spd.aveK_1D = Avenk_NK(g_Net.N, netAdjList);							
 		g_Spd.aveK_2D = Avenk_TriNK(g_Net.N, netTriList);
 
 		Cal_AveStRho_Of_Diff_Diffusions(&netAdjList, &netTriList, i, rhoParm);

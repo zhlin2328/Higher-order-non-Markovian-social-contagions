@@ -6,8 +6,7 @@
 //** Created by:          linzhaohua
 //** Created date:        2019-5-13
 //** Version:             V1.0
-//** Descriptions:        simplex非马模型(Gibson异步更新)，画parm_rho图，可以产生平均后的aveRho_T图，
-//						这个程序只适合用于x轴变化的为1D，beta而不是2D的
+//** Descriptions:        simplex非马模型(Gibson异步更新)，画parm_rho图
 //********************************************************************************************************/
 //#include "../headers/config.h"
 //

@@ -81,7 +81,6 @@ void Cal_Steady_Value_And_Write_Into_AveStRho_Parm(double lamEff, double parm, v
 	double stRho = 0;
 	int num = 0;
 	int stepTotal = Double_Into_Int(g_Spd.REAL_TIME_LEN / double(RESCALE_TIME_STEP));
-	//e.g.REAL_TIME_LEN=3000,则只记录[0,1)-[2999,3000)时刻内的传播，所以在spread的One_Diffusion_AS中为while (tNow < g_Spd.REAL_TIME_LEN)
 	int stepBegin_Of_Cal_Steady_Rho = Double_Into_Int((PCT_OF_STEP_BEGIN_OF_CAL_STEADY_RHO)*double(stepTotal));
 
 	for (int i = stepBegin_Of_Cal_Steady_Rho; i < stepTotal; i++)
@@ -124,7 +123,7 @@ vector<vector<double> > Cal_AveRho_Of_Diff_Networks(double lamEff)
 		sprintf(name, NETWORK_TRI_FILE, i, g_Net.SERIAL);								//read netwotk_tri_list data
 		Read_Net_TriList_File(&netTriList, name);
 
-		g_Spd.aveK_1D = Avenk_NK(g_Net.N, netAdjList);									//这个目前没什么作用了
+		g_Spd.aveK_1D = Avenk_NK(g_Net.N, netAdjList);									
 		g_Spd.aveK_2D = Avenk_TriNK(g_Net.N, netTriList);
 
 		Cal_AveRho_Of_Diff_Diffusions(lamEff, &netAdjList, &netTriList, aveRho_T, num);

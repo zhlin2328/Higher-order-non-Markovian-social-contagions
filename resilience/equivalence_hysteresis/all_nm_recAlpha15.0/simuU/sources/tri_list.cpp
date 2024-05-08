@@ -6,7 +6,7 @@
 ** Created by:          linzhaohua
 ** Created date:        2019-11-26
 ** Version:             V1.0
-** Descriptions:        tri_list.cpp,旧的g_netTriList改为(*netTri),&g_netTriList改为netTri
+** Descriptions:        tri_list.cpp
 ********************************************************************************************************/
 #include "../headers/config.h"
 

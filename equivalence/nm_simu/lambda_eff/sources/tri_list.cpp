@@ -6,7 +6,7 @@
 ** Created by:          linzhaohua
 ** Created date:        2019-11-26
 ** Version:             V1.0
-** Descriptions:        tri_list.cpp,旧的g_netTriList改为(*netTri),&g_netTriList改为netTri
+** Descriptions:        tri_list.cpp
 ********************************************************************************************************/
 #include "../headers/config.h"
 
@@ -61,7 +61,7 @@ void Pop_Back_TriNK(TRILIST **netTri, int rowIndex)
 	(*netTri)[rowIndex].p_tail = temp;
 	free(work);
 
-	work = NULL;										//这句话其实没什么作用，只是安全作用
+	work = NULL;										
 	(*netTri)[rowIndex].degree -= 1;
 }
 /********************************************************************************************************************************

@@ -85,8 +85,6 @@ void Set_Spd_Parm(void)
 /********************************************************************************************************************************
 ** Function name:       Gamma_Fun
 ** Descriptions:        计算gamma函数的函数值（实数域，x>0）
-						(我试了一下，x<1.0的我的这个函数只有小数点后5位是准的，>1.0的是小数点后9位是准的)
-						在我只关注的eff_Dif=0-1之间，当alpha=0.5，fun1和fun2计算得到的前6位是相同的。
 ** input parameters:    x(is x of gamma(x))
 ** output parameters:   gamma(x)
 ** Returned value:      gamma(x)

@@ -6,7 +6,7 @@
 ** Created by:          linzhaohua
 ** Created date:        2019-5-13
 ** Version:             V1.0
-** Descriptions:        list.cpp,旧的g_netAdjList改为(*net),&g_netAdjList改为net
+** Descriptions:        list.cpp
 ********************************************************************************************************/
 #include "../headers/config.h"
 
@@ -67,7 +67,7 @@ void Pop_Back_NK(LIST **net, int rowIndex)
 	}
 	free(work);
 
-	work = NULL;											//这句话其实没什么作用，只是安全作用
+	work = NULL;											
 	(*net)[rowIndex].degree -= 1;
 }
 /********************************************************************************************************************************

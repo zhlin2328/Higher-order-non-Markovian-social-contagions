@@ -7,8 +7,7 @@
 ** Created date:        2019-5-13
 ** Version:             V1.0
 ** Descriptions:        simplex非马模型(Gibson异步更新)，
-						画lambdaEffC_1D~I0图（直接由每个rhoT求出stRho值，然后每张parm_rho图算临界值lambdaEffC）
-						是lambda_eff_1D的程序修改来的
+						画lambdaEffC_1D~I0图
 ********************************************************************************************************/
 #include "../headers/config.h"
 

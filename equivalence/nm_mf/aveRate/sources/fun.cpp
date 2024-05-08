@@ -349,7 +349,7 @@ double Cal_LamEff_1D(TEMP& Temp)
 	double lamEff_1D = 0.0;
 	for (int i = 0; i < Temp.TOTAL_TIME_STEPS; i++)
 	{
-		lamEff_1D += Temp.ita_1D[i] * Temp.recSurvival[i];				//ita_1D[i]的值已经自带了dt
+		lamEff_1D += Temp.ita_1D[i] * Temp.recSurvival[i];				
 	}
 
 	return lamEff_1D;
@@ -391,7 +391,7 @@ double Cal_LamEff_2D(TEMP& Temp)		//dai ding
 	for (int i = 0; i < Temp.TOTAL_TIME_STEPS; i++)
 	{
 		lamEff_2D += 2.0*Temp.ita_2D[i] * Temp.recSurvival[i]
-			* Temp.deltaEff*Temp.cumRec_Survival[i];				//ita_2D[i]的值已经自带了dt
+			* Temp.deltaEff*Temp.cumRec_Survival[i];				
 	}
 
 	return lamEff_2D;
@@ -452,7 +452,7 @@ void Cal_Ita_2D(TEMP& Temp)
 		Temp.ita_2D[i] = Temp.inf_2D[i];									//psi_inf 2D
 		for (int j = 0; j < i; j++)
 		{
-			Temp.ita_2D[i] += Temp.ita_2D[j] * Temp.inf_2D[i - j - 1];		//这个Temp.ita_2D[j] * Temp.inf_2D[i - j]里面自带dt*dt
+			Temp.ita_2D[i] += Temp.ita_2D[j] * Temp.inf_2D[i - j - 1];		
 		}
 	}
 }
@@ -508,8 +508,6 @@ void Output_LamEff1D_To_File(void)
 /********************************************************************************************************************************
 ** Function name:       Gamma_Fun
 ** Descriptions:        计算gamma函数的函数值（实数域，x>0）
-						(我试了一下，x<1.0的我的这个函数只有小数点后5位是准的，>1.0的是小数点后9位是准的)
-						在我只关注的eff_Dif=0-1之间，当alpha=0.5，fun1和fun2计算得到的前6位是相同的。
 ** input parameters:    x(is x of gamma(x))
 ** output parameters:   gamma(x)
 ** Returned value:      gamma(x)
@@ -531,7 +529,6 @@ double Gamma_Fun1(double x)
 
 	return sol;
 }
-//别人写的gamma函数
 double Gamma_Fun2(const double xx)
 {
 	int j;

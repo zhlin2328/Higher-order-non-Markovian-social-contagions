@@ -162,7 +162,7 @@ void Output_NotAveStRho_Parm_To_File(int netCnt, int diffusionCnt, vector<vector
 	char *name;
 
 	name = (char *)malloc(NAME_SIZE * sizeof(char));
-	sprintf(name, "task%d_NotAveStRho_Parm.csv", g_taskNum);							//怎么显示参数名  //这里可能要改为宏定义
+	sprintf(name, "task%d_NotAveStRho_Parm.csv", g_taskNum);							
 	if (netCnt == 0 && diffusionCnt == 0)							//clear file content
 	{
 		fp = fopen(name, "w+");

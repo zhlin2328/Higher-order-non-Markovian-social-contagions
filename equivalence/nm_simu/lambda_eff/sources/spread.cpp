@@ -150,7 +150,7 @@ void Init_Parm_Of_Dif(LIST **net, TRILIST **netTri, DIFFUSION& Dif)
 {
 	Dif.rhoCnt = 0;
 	Dif.state.resize(g_Net.N, 0);
-	Dif.neighborI_Num.resize(g_Net.N, 0);				//这个neighborI_Num只是蛮留着，来记录下I邻居的个数
+	Dif.neighborI_Num.resize(g_Net.N, 0);				
 	Init_EvtSort_And_Update_Pos(net, netTri, Dif);
 }
 /********************************************************************************************************************************

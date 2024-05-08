@@ -6,7 +6,7 @@
 ** Created by:          linzhaohua
 ** Created date:        2019-5-13
 ** Version:             V1.0
-** Descriptions:        list.cpp,旧的g_netAdjList改为(*net),&g_netAdjList改为net
+** Descriptions:        list.cpp
 ********************************************************************************************************/
 #include "../headers/config.h"
 

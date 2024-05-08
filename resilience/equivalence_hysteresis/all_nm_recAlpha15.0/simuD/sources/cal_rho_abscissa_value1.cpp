@@ -7,9 +7,7 @@
 ** Created date:        2021.2.1
 ** Version:             V1.0
 ** Descriptions:        绝热过程的方式画迟滞回线
-						simplex非马模型(Gibson异步更新)，
-						画parm_rho图（直接由每个rhoT求出stRho值，然后平均得到parm_rho图），
-						这个程序只适合用于x轴变化的为1D，beta而不是2D的
+						simplex非马模型(Gibson异步更新)
 ********************************************************************************************************/
 #include "../headers/config.h"
 

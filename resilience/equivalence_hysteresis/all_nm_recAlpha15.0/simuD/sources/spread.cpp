@@ -26,7 +26,7 @@ void Inc_Neighbor_I_Num(LIST **net, DIFFUSION& Dif, int srcNode);
 void Dec_Neighbor_I_Num(LIST **net, DIFFUSION& Dif, int srcNode);
 /********************************************************************************************************************************
 ** Function name:       Cal_AveSteadyRho_Of_Diff_Parm_Values
-** Descriptions:        绝热过程的方式画迟滞回线，这个是NC文献simplex模型的异步更新程序，Gilbson异步更新
+** Descriptions:        Cal_AveSteadyRho_Of_Diff_Parm_Values
 ** input parameters:    net,aveStRho_Parm
 ** output parameters:   None
 ** Returned value:      None

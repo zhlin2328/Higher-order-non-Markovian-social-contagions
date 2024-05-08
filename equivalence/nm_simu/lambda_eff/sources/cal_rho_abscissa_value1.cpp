@@ -6,8 +6,7 @@
 ** Created by:          linzhaohua
 ** Created date:        2019-5-13
 ** Version:             V1.0
-** Descriptions:        simplex非马模型(Gibson异步更新)，
-						画parm_rho图（直接由每个rhoT求出stRho值，然后平均得到parm_rho图）
+** Descriptions:        simplex非马模型(Gibson异步更新)
 ********************************************************************************************************/
 #include "../headers/config.h"
 

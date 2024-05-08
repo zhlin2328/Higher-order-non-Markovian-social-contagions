@@ -416,7 +416,7 @@ void Cal_Var_Of_Temp(TEMP& Temp)
 	{
 		tmp1 = pow((E_VALUE), -pow(((double)(i))*timeStep / g_Spd.BETA_INF_1D, g_Spd.ALPHA_INF_1D));		//inf_1D
 		tmp2 = pow((E_VALUE), -pow(((double)(i + 1))*timeStep / g_Spd.BETA_INF_1D, g_Spd.ALPHA_INF_1D));
-		Temp.inf_1D[i] = tmp1 - tmp2;																	//这个已经自带dt了，因为是i的量减去i+1的
+		Temp.inf_1D[i] = tmp1 - tmp2;																	
 		//这里的tau~tau+dt时间内感染的概率inf_1D(即psi_inf*dt)是用相邻时间的存活概率相减得到的
 
 		tmp1 = pow((E_VALUE), -pow(((double)i)*timeStep / g_Spd.BETA_REC, g_Spd.ALPHA_REC));			//recSurvival probability
@@ -450,7 +450,7 @@ void Cal_Ita_1D(TEMP& Temp)
 		Temp.ita_1D[i] = Temp.inf_1D[i];									//psi_inf 1D
 		for (int j = 0; j < i; j++)
 		{
-			Temp.ita_1D[i] += Temp.ita_1D[j] * Temp.inf_1D[i - j - 1];		//这个Temp.ita_1D[j] * Temp.inf_1D[i - j]里面自带dt*dt
+			Temp.ita_1D[i] += Temp.ita_1D[j] * Temp.inf_1D[i - j - 1];		
 		}
 	}
 }
@@ -506,8 +506,6 @@ void Output_LamEff2D_To_File(void)
 /********************************************************************************************************************************
 ** Function name:       Gamma_Fun
 ** Descriptions:        计算gamma函数的函数值（实数域，x>0）
-						(我试了一下，x<1.0的我的这个函数只有小数点后5位是准的，>1.0的是小数点后9位是准的)
-						在我只关注的eff_Dif=0-1之间，当alpha=0.5，fun1和fun2计算得到的前6位是相同的。
 ** input parameters:    x(is x of gamma(x))
 ** output parameters:   gamma(x)
 ** Returned value:      gamma(x)
@@ -529,7 +527,6 @@ double Gamma_Fun1(double x)
 
 	return sol;
 }
-//别人写的gamma函数
 double Gamma_Fun2(const double xx)
 {
 	int j;

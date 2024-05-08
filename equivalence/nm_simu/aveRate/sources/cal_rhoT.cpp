@@ -77,7 +77,7 @@ vector<vector<double> > Cal_AveRho_Of_Diff_Networks()
 		sprintf(name, NETWORK_TRI_FILE, i, g_Net.SERIAL);								//read netwotk_tri_list data
 		Read_Net_TriList_File(&netTriList, name);
 
-		g_Spd.aveK_1D = Avenk_NK(g_Net.N, netAdjList);									//这个目前没什么作用了
+		g_Spd.aveK_1D = Avenk_NK(g_Net.N, netAdjList);									
 		g_Spd.aveK_2D = Avenk_TriNK(g_Net.N, netTriList);
 
 		Cal_AveRho_Of_Diff_Diffusions(&netAdjList, &netTriList, aveRho_T, num);
